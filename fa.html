@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fa" dir="rtl">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Fazele Ardestani — Python Developer</title>
+<title>فاضله اردستانی — توسعه‌دهنده پایتون</title>
 <style>
   /* ─── TOKENS ─────────────────────────────────────────────── */
   :root {
@@ -26,10 +26,42 @@
     --amber:        #f6ad55;
 
     --mono: 'Courier New', Courier, monospace;
-    --sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+    --sans: 'IRANYekanX', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
 
     --radius:   10px;
     --radius-sm: 6px;
+  }
+
+  /* ─── FONTS ──────────────────────────────────────────────── */
+  @font-face {
+    font-family: 'IRANYekanX';
+    src: url('fonts/IRANYekanX-Light.woff2') format('woff2');
+    font-weight: 300;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: 'IRANYekanX';
+    src: url('fonts/IRANYekanX-Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: 'IRANYekanX';
+    src: url('fonts/IRANYekanX-Medium.woff2') format('woff2');
+    font-weight: 500;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: 'IRANYekanX';
+    src: url('fonts/IRANYekanX-Bold.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: 'IRANYekanX';
+    src: url('fonts/IRANYekanX-Black.woff2') format('woff2');
+    font-weight: 900;
+    font-style: normal;
   }
 
   /* ─── RESET ──────────────────────────────────────────────── */
@@ -40,7 +72,7 @@
     color: var(--text);
     font-family: var(--sans);
     font-size: 15px;
-    line-height: 1.65;
+    line-height: 1.7;
     overflow-x: hidden;
   }
   a { color: inherit; text-decoration: none; }
@@ -67,8 +99,8 @@
     z-index: 0;
     opacity: 0.3;
   }
-  .blob-1 { width: 600px; height: 600px; background: radial-gradient(circle, rgba(99,179,237,0.2) 0%, transparent 70%); top: -200px; right: -100px; }
-  .blob-2 { width: 500px; height: 500px; background: radial-gradient(circle, rgba(159,122,234,0.15) 0%, transparent 70%); bottom: 20%; left: -150px; }
+  .blob-1 { width: 600px; height: 600px; background: radial-gradient(circle, rgba(99,179,237,0.2) 0%, transparent 70%); top: -200px; left: -100px; }
+  .blob-2 { width: 500px; height: 500px; background: radial-gradient(circle, rgba(159,122,234,0.15) 0%, transparent 70%); bottom: 20%; right: -150px; }
 
   /* ─── LAYOUT ─────────────────────────────────────────────── */
   .container {
@@ -104,6 +136,7 @@
     font-size: 13px;
     color: var(--accent);
     letter-spacing: 0.02em;
+    direction: ltr;
   }
   .nav-links {
     display: flex;
@@ -111,13 +144,20 @@
     list-style: none;
   }
   .nav-links a {
-    font-size: 13px;
+    font-size: 14px;
     color: var(--text-2);
     transition: color 0.2s;
-    font-family: var(--mono);
-    letter-spacing: 0.02em;
+    font-weight: 500;
   }
   .nav-links a:hover { color: var(--accent); }
+  .lang-switch {
+    font-family: var(--mono);
+    font-weight: 700 !important;
+    color: var(--accent) !important;
+    border: 1px solid var(--border);
+    padding: 4px 10px;
+    border-radius: 4px;
+  }
 
   /* ─── HERO ───────────────────────────────────────────────── */
   #hero {
@@ -133,10 +173,9 @@
     align-items: center;
   }
   .hero-eyebrow {
-    font-family: var(--mono);
-    font-size: 12px;
+    font-size: 13px;
+    font-weight: 500;
     color: var(--accent);
-    letter-spacing: 0.08em;
     margin-bottom: 20px;
     display: flex;
     align-items: center;
@@ -151,9 +190,8 @@
   }
   h1 {
     font-size: clamp(38px, 6vw, 68px);
-    font-weight: 700;
-    line-height: 1.08;
-    letter-spacing: -0.02em;
+    font-weight: 900;
+    line-height: 1.2;
     margin-bottom: 12px;
     color: var(--text);
   }
@@ -162,14 +200,13 @@
     font-size: clamp(16px, 2.5vw, 22px);
     font-weight: 500;
     margin-bottom: 20px;
-    font-family: var(--mono);
   }
   .hero-tagline {
     font-size: 16px;
     color: var(--text-2);
     max-width: 540px;
     margin-bottom: 40px;
-    line-height: 1.7;
+    line-height: 1.8;
   }
   .hero-contacts {
     display: flex;
@@ -183,11 +220,12 @@
     padding: 8px 16px;
     border: 1px solid var(--border);
     border-radius: 40px;
-    font-size: 12.5px;
-    font-family: var(--mono);
+    font-size: 13px;
+    font-weight: 500;
     color: var(--text-2);
     background: var(--surface);
     transition: border-color 0.2s, color 0.2s, background 0.2s;
+    direction: ltr;
   }
   .contact-chip:hover {
     border-color: var(--border-glow);
@@ -203,6 +241,8 @@
     border-radius: var(--radius);
     overflow: hidden;
     box-shadow: 0 0 40px rgba(99,179,237,0.06);
+    direction: ltr;
+    text-align: left;
   }
   .card-bar {
     background: var(--surface-2);
@@ -245,26 +285,22 @@
   @keyframes blink { 50% { opacity: 0; } }
 
   /* ─── SECTION HEADINGS ───────────────────────────────────── */
-  .section-head {
-    margin-bottom: 52px;
-  }
+  .section-head { margin-bottom: 52px; }
   .section-label {
-    font-family: var(--mono);
-    font-size: 11px;
+    font-size: 13px;
     color: var(--text-3);
-    letter-spacing: 0.1em;
     margin-bottom: 10px;
+    font-weight: 500;
   }
   h2 {
     font-size: clamp(24px, 4vw, 36px);
-    font-weight: 700;
-    letter-spacing: -0.02em;
-    line-height: 1.15;
+    font-weight: 900;
+    line-height: 1.2;
   }
   .section-rule {
     width: 48px;
     height: 2px;
-    background: linear-gradient(90deg, var(--accent), transparent);
+    background: linear-gradient(270deg, var(--accent), transparent);
     margin-top: 14px;
   }
 
@@ -279,7 +315,8 @@
   .about-text {
     color: var(--text-2);
     font-size: 15.5px;
-    line-height: 1.75;
+    line-height: 1.85;
+    text-align: justify;
   }
   .about-text p { margin-bottom: 16px; }
   .about-text p:last-child { margin-bottom: 0; }
@@ -300,16 +337,19 @@
     box-shadow: 0 0 20px rgba(99,179,237,0.08);
   }
   .stat-num {
+    font-family: var(--mono);
     font-size: 32px;
     font-weight: 700;
     color: var(--accent);
     line-height: 1;
-    margin-bottom: 4px;
+    margin-bottom: 8px;
+    direction: ltr;
+    text-align: right;
   }
   .stat-label {
-    font-size: 12px;
+    font-size: 13px;
     color: var(--text-3);
-    font-family: var(--mono);
+    font-weight: 500;
   }
 
   /* ─── SKILLS ─────────────────────────────────────────────── */
@@ -330,10 +370,9 @@
     box-shadow: 0 0 24px rgba(99,179,237,0.07);
   }
   .skill-group-title {
-    font-family: var(--mono);
-    font-size: 11px;
+    font-size: 13px;
+    font-weight: 700;
     color: var(--accent);
-    letter-spacing: 0.08em;
     margin-bottom: 18px;
     display: flex;
     align-items: center;
@@ -360,20 +399,14 @@
     font-size: 12px;
     font-weight: 500;
     border: 1px solid;
-    transition: transform 0.15s, box-shadow 0.15s;
+    direction: ltr;
   }
-  .badge:hover { transform: translateY(-1px); box-shadow: 0 4px 14px rgba(0,0,0,0.25); }
   .badge-blue  { color: var(--accent);   border-color: rgba(99,179,237,0.3);   background: var(--accent-dim); }
   .badge-purple{ color: var(--accent-2); border-color: rgba(159,122,234,0.3);  background: var(--accent-2-dim); }
   .badge-green { color: var(--green);    border-color: rgba(104,211,145,0.3);  background: var(--green-dim); }
   .badge-amber { color: var(--amber);    border-color: rgba(246,173,85,0.3);   background: rgba(246,173,85,0.1); }
 
-  .level-dot {
-    width: 6px; height: 6px;
-    border-radius: 50%;
-    background: currentColor;
-    opacity: 0.7;
-  }
+  .level-dot { width: 6px; height: 6px; border-radius: 50%; background: currentColor; opacity: 0.7; }
 
   /* ─── EXPERIENCE ─────────────────────────────────────────── */
   #experience { background: var(--bg-2); }
@@ -416,13 +449,13 @@
   }
   .exp-role {
     font-size: 18px;
-    font-weight: 600;
+    font-weight: 700;
     color: var(--text);
     margin-bottom: 2px;
   }
   .exp-company {
-    font-family: var(--mono);
-    font-size: 13px;
+    font-size: 14px;
+    font-weight: 500;
     color: var(--accent);
     margin-bottom: 8px;
   }
@@ -433,8 +466,7 @@
     margin-bottom: 16px;
   }
   .exp-tag {
-    font-family: var(--mono);
-    font-size: 11px;
+    font-size: 12px;
     color: var(--text-3);
     display: flex;
     align-items: center;
@@ -450,14 +482,15 @@
   .exp-bullets li {
     font-size: 14px;
     color: var(--text-2);
-    padding-left: 16px;
+    padding-right: 16px;
     position: relative;
-    line-height: 1.6;
+    line-height: 1.7;
+    text-align: justify;
   }
   .exp-bullets li::before {
     content: '';
     position: absolute;
-    left: 0; top: 9px;
+    right: 0; top: 12px;
     width: 5px; height: 1px;
     background: var(--accent);
     opacity: 0.6;
@@ -496,22 +529,27 @@
   }
   .proj-icon svg { width: 20px; height: 20px; }
   .proj-name {
+    font-family: var(--mono);
     font-size: 15px;
-    font-weight: 600;
+    font-weight: 700;
     color: var(--text);
     line-height: 1.3;
+    direction: ltr;
+    text-align: right;
   }
   .proj-desc {
-    font-size: 13px;
+    font-size: 13.5px;
     color: var(--text-2);
-    line-height: 1.6;
+    line-height: 1.7;
     flex: 1;
+    text-align: justify;
   }
   .proj-tags {
     display: flex;
     flex-wrap: wrap;
     gap: 6px;
     margin-top: auto;
+    direction: ltr;
   }
   .proj-tag {
     font-family: var(--mono);
@@ -547,7 +585,7 @@
   .edu-card.featured {
     grid-column: span 2;
     border-color: rgba(99,179,237,0.22);
-    background: linear-gradient(135deg, var(--surface) 0%, rgba(99,179,237,0.04) 100%);
+    background: linear-gradient(315deg, var(--surface) 0%, rgba(99,179,237,0.04) 100%);
   }
   .edu-icon {
     width: 42px; height: 42px;
@@ -561,21 +599,19 @@
     border: 1px solid var(--border);
   }
   .edu-title {
-    font-size: 14.5px;
-    font-weight: 600;
+    font-size: 15px;
+    font-weight: 700;
     color: var(--text);
-    margin-bottom: 3px;
-    line-height: 1.35;
+    margin-bottom: 4px;
+    line-height: 1.4;
   }
   .edu-org {
-    font-family: var(--mono);
-    font-size: 11.5px;
+    font-size: 12.5px;
     color: var(--accent);
     margin-bottom: 4px;
   }
   .edu-meta {
-    font-family: var(--mono);
-    font-size: 11px;
+    font-size: 12px;
     color: var(--text-3);
   }
 
@@ -590,20 +626,15 @@
     align-items: center;
     gap: 14px;
   }
-  .volunteer-icon {
-    font-size: 22px;
-    flex-shrink: 0;
-  }
+  .volunteer-icon { font-size: 22px; flex-shrink: 0; }
   .volunteer-text strong {
     display: block;
     color: var(--green);
-    font-size: 14px;
-    margin-bottom: 2px;
+    font-size: 14.5px;
+    font-weight: 700;
+    margin-bottom: 4px;
   }
-  .volunteer-text span {
-    font-size: 13px;
-    color: var(--text-2);
-  }
+  .volunteer-text span { font-size: 13.5px; color: var(--text-2); }
 
   /* ─── FOOTER ─────────────────────────────────────────────── */
   footer {
@@ -619,12 +650,14 @@
     font-family: var(--mono);
     font-size: 13px;
     color: var(--text-3);
+    direction: ltr;
   }
   .footer-name span { color: var(--accent); }
   .footer-copy {
+    font-family: var(--mono);
     font-size: 12px;
     color: var(--text-3);
-    font-family: var(--mono);
+    direction: ltr;
   }
 
   /* ─── SCROLL REVEAL ──────────────────────────────────────── */
@@ -633,10 +666,7 @@
     transform: translateY(22px);
     transition: opacity 0.55s ease, transform 0.55s ease;
   }
-  .reveal.visible {
-    opacity: 1;
-    transform: none;
-  }
+  .reveal.visible { opacity: 1; transform: none; }
   .reveal-delay-1 { transition-delay: 0.08s; }
   .reveal-delay-2 { transition-delay: 0.16s; }
   .reveal-delay-3 { transition-delay: 0.24s; }
@@ -663,17 +693,10 @@
     .stat-grid { grid-template-columns: 1fr; }
     .footer-inner { flex-direction: column; gap: 8px; text-align: center; }
   }
-
-  /* ─── REDUCED MOTION ─────────────────────────────────────── */
-  @media (prefers-reduced-motion: reduce) {
-    .reveal { transition: none; opacity: 1; transform: none; }
-    .cursor { animation: none; }
-  }
 </style>
 </head>
 <body>
 
-<!-- ambient -->
 <div class="blob blob-1" aria-hidden="true"></div>
 <div class="blob blob-2" aria-hidden="true"></div>
 
@@ -682,12 +705,12 @@
   <div class="inner">
     <span class="nav-logo">fazele@portfolio:~$</span>
     <ul class="nav-links">
-      <li><a href="#about">about</a></li>
-      <li><a href="#skills">skills</a></li>
-      <li><a href="#experience">experience</a></li>
-      <li><a href="#projects">projects</a></li>
-      <li><a href="#education">education</a></li>
-      <li><a href="fa.html" class="lang-switch">FA</a></li>
+      <li><a href="#about">درباره من</a></li>
+      <li><a href="#skills">مهارت‌ها</a></li>
+      <li><a href="#experience">سوابق کاری</a></li>
+      <li><a href="#projects">پروژه‌ها</a></li>
+      <li><a href="#education">تحصیلات</a></li>
+      <li><a href="index.html" class="lang-switch">EN</a></li>
     </ul>
   </div>
 </nav>
@@ -697,12 +720,11 @@
   <div class="container">
     <div class="hero-inner">
       <div>
-        <p class="hero-eyebrow reveal">available for opportunities</p>
-        <h1 class="reveal reveal-delay-1">Fazele<br>Ardestani</h1>
-        <p class="hero-title-line reveal reveal-delay-2">Python Developer / WordPress</p>
+        <p class="hero-eyebrow reveal">آماده برای همکاری</p>
+        <h1 class="reveal reveal-delay-1">فاضله<br>اردستانی</h1>
+        <p class="hero-title-line reveal reveal-delay-2">توسعه‌دهنده پایتون / وردپرس</p>
         <p class="hero-tagline reveal reveal-delay-3">
-          Computer Engineer focused on Backend Development,
-          Database Design, and IT Infrastructure.
+          مهندس کامپیوتر متمرکز بر توسعه بک‌اند، طراحی دیتابیس و مدیریت زیرساخت‌های IT.
         </p>
         <div class="hero-contacts reveal reveal-delay-3">
           <a href="mailto:fazeleardestani@gmail.com" class="contact-chip">
@@ -717,7 +739,7 @@
             <svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
             LinkedIn
           </a>
-          <a href="https://github.com" target="_blank" rel="noopener" class="contact-chip">
+          <a href="https://github.com/fazeleardestani" target="_blank" rel="noopener" class="contact-chip">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
             GitHub
           </a>
@@ -760,32 +782,32 @@
 <section id="about">
   <div class="container">
     <div class="section-head reveal">
-      <p class="section-label">01 — about</p>
-      <h2>The background</h2>
+      <p class="section-label">۰۱ — درباره من</p>
+      <h2>خلاصه حرفه‌ای</h2>
       <div class="section-rule"></div>
     </div>
     <div class="about-grid">
       <div class="about-text reveal">
-        <p>Computer Engineer with practical experience in IT Support, setting up local networks, and WordPress development. Experienced in system troubleshooting and rapidly deploying client requirements using ready-made templates.</p>
-        <p>Currently advancing towards Software Engineering, focusing on Backend Development with Python and Django, Database Architecture with SQL and PostgreSQL, and process automation.</p>
-        <p>Highly motivated to contribute to software development teams and bring technical rigour to every project, from infrastructure to application layer.</p>
+        <p>فارغ‌التحصیل مهندسی کامپیوتر با تجربه عملی در پشتیبانی IT، راه‌اندازی شبکه‌های محلی کوچک و توسعه وب‌سایت‌های وردپرسی. دارای سابقه عیب‌یابی سیستم‌ها و استفاده از قالب‌های آماده جهت پیاده‌سازی سریع نیازهای کارفرما.</p>
+        <p>در حال حاضر با هدف ارتقای مسیر شغلی به سمت مهندسی نرم‌افزار، بر یادگیری و توسعه بک‌اند با Python و Django، معماری دیتابیس (SQL/PostgreSQL) و اتوماسیون فرآیندها متمرکز هستم.</p>
+        <p>آماده‌ام تا با انگیزه بالا، تفکر مهندسی را از لایه زیرساخت تا توسعه نرم‌افزار در تیم‌های پویا به کار بگیرم.</p>
       </div>
       <div class="stat-grid">
         <div class="stat-card reveal reveal-delay-1">
           <div class="stat-num">3.5</div>
-          <div class="stat-label">years experience</div>
+          <div class="stat-label">سال تجربه کاری</div>
         </div>
         <div class="stat-card reveal reveal-delay-2">
           <div class="stat-num">6+</div>
-          <div class="stat-label">sites deployed</div>
+          <div class="stat-label">پروژه راه‌اندازی شده</div>
         </div>
         <div class="stat-card reveal reveal-delay-1">
           <div class="stat-num">BSc</div>
-          <div class="stat-label">Computer Engineering</div>
+          <div class="stat-label">مهندسی کامپیوتر</div>
         </div>
         <div class="stat-card reveal reveal-delay-2">
           <div class="stat-num">24</div>
-          <div class="stat-label">years old · Tehran</div>
+          <div class="stat-label">تهران، ایران</div>
         </div>
       </div>
     </div>
@@ -796,13 +818,13 @@
 <section id="skills">
   <div class="container">
     <div class="section-head reveal">
-      <p class="section-label">02 — skills</p>
-      <h2>Tech stack</h2>
+      <p class="section-label">۰۲ — مهارت‌ها</p>
+      <h2>تخصص و ابزارها</h2>
       <div class="section-rule"></div>
     </div>
     <div class="skills-groups">
       <div class="skill-group reveal">
-        <div class="skill-group-title">Backend &amp; Database</div>
+        <div class="skill-group-title">بک‌اند و دیتابیس</div>
         <div class="badges">
           <span class="badge badge-blue"><span class="level-dot"></span>Python · Medium</span>
           <span class="badge badge-purple"><span class="level-dot"></span>Django · Intro</span>
@@ -811,7 +833,7 @@
         </div>
       </div>
       <div class="skill-group reveal reveal-delay-1">
-        <div class="skill-group-title">Web &amp; Tooling</div>
+        <div class="skill-group-title">وب و ابزارها</div>
         <div class="badges">
           <span class="badge badge-amber"><span class="level-dot"></span>HTML &amp; CSS · Medium</span>
           <span class="badge badge-blue"><span class="level-dot"></span>WordPress · Medium</span>
@@ -827,8 +849,8 @@
 <section id="experience">
   <div class="container">
     <div class="section-head reveal">
-      <p class="section-label">03 — experience</p>
-      <h2>Where I've worked</h2>
+      <p class="section-label">۰۳ — سوابق شغلی</p>
+      <h2>تجربیات کاری</h2>
       <div class="section-rule"></div>
     </div>
     <div class="exp-list">
@@ -839,21 +861,21 @@
           <div class="exp-line"></div>
         </div>
         <div>
-          <div class="exp-role">IT Expert</div>
-          <div class="exp-company">Mapco Logistics</div>
+          <div class="exp-role">کارشناس IT</div>
+          <div class="exp-company">شرکت میکو لجستیک</div>
           <div class="exp-meta">
             <span class="exp-tag">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-              Mar 2024 – Aug 2026
+              فروردین ۱۴۰۳ – خرداد ۱۴۰۵
             </span>
             <span class="exp-tag">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-              Tehran, Iran
+              تهران، ایران
             </span>
           </div>
           <ul class="exp-bullets">
-            <li>Provided Helpdesk support and resolved hardware, software, and internet issues for all personnel.</li>
-            <li>Set up and maintained simple local networks and managed file-level access permissions via Windows Shared Folders to streamline daily team workflows.</li>
+            <li>ارائه خدمات پشتیبانی فنی (Helpdesk) و رفع مشکلات سخت‌افزاری، نرم‌افزاری و اینترنت پرسنل تیم ۶ نفره.</li>
+            <li>راه‌اندازی و نگهداری شبکه محلی ساده و مدیریت سطح دسترسی فایل‌ها از طریق Windows Shared Folders جهت تسهیل جریان کار روزانه تیم.</li>
           </ul>
         </div>
       </div>
@@ -864,21 +886,21 @@
           <div class="exp-line"></div>
         </div>
         <div>
-          <div class="exp-role">WordPress Developer</div>
-          <div class="exp-company">Doctor Man</div>
+          <div class="exp-role">توسعه‌دهنده وردپرس</div>
+          <div class="exp-company">دکتر من (پروژه‌ای)</div>
           <div class="exp-meta">
             <span class="exp-tag">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-              Aug 2024 – Oct 2024
+              شهریور ۱۴۰۳ – آبان ۱۴۰۳
             </span>
             <span class="exp-tag">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-              Karaj, Iran
+              کرج، ایران
             </span>
           </div>
           <ul class="exp-bullets">
-            <li>Deployed 2 online medical appointment-booking systems using WordPress themes and plugins.</li>
-            <li>Customised the user interface with code-level edits and personalised brand styling to match exact client specifications.</li>
+            <li>راه‌اندازی ۲ سیستم نوبت‌دهی آنلاین در حوزه درمانی با استفاده از قالب‌ها و افزونه‌های آماده وردپرس.</li>
+            <li>اعمال تغییرات جزئی در کدها و شخصی‌سازی رابط کاربری دقیقاً بر اساس هویت بصری و نیازمندی‌های کارفرما.</li>
           </ul>
         </div>
       </div>
@@ -888,21 +910,21 @@
           <div class="exp-dot"></div>
         </div>
         <div>
-          <div class="exp-role">SEO Intern &amp; Site Admin</div>
-          <div class="exp-company">Attar Khooneh</div>
+          <div class="exp-role">کارآموز سئو و ادمین سایت</div>
+          <div class="exp-company">عطار خونه</div>
           <div class="exp-meta">
             <span class="exp-tag">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-              May 2022 – Jun 2023
+              اردیبهشت ۱۴۰۱ – خرداد ۱۴۰۲
             </span>
             <span class="exp-tag">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-              Tehran, Iran
+              تهران، ایران
             </span>
           </div>
           <ul class="exp-bullets">
-            <li>Managed website content, product uploads, and regular information updates.</li>
-            <li>Applied On-Page SEO principles to improve page rankings across major search engines.</li>
+            <li>مدیریت محتوای سایت، بارگذاری محصولات و به‌روزرسانی منظم اطلاعات فروشگاه.</li>
+            <li>اجرای اصول اولیه On-Page SEO به منظور بهبود رتبه صفحات در موتورهای جستجو.</li>
           </ul>
         </div>
       </div>
@@ -915,8 +937,8 @@
 <section id="projects">
   <div class="container">
     <div class="section-head reveal">
-      <p class="section-label">04 — projects</p>
-      <h2>Things I've built</h2>
+      <p class="section-label">۰۴ — پروژه‌ها</p>
+      <h2>نمونه کارهای عملی</h2>
       <div class="section-rule"></div>
     </div>
     <div class="projects-grid">
@@ -926,7 +948,7 @@
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
         </div>
         <div class="proj-name">Bale Messenger Bot</div>
-        <div class="proj-desc">A Python-powered automation bot for the Bale messaging platform, handling task automation and workflow streamlining.</div>
+        <div class="proj-desc">بات اتوماسیون توسعه‌یافته با پایتون برای پلتفرم بله جهت خودکارسازی و مدیریت فرآیندها.</div>
         <div class="proj-tags">
           <span class="proj-tag">Python</span>
           <span class="proj-tag">Bot API</span>
@@ -939,7 +961,7 @@
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
         </div>
         <div class="proj-name">FlowPlanner.ir</div>
-        <div class="proj-desc">E-commerce website for a digital planner startup — product setup, store configuration, and visual brand alignment.</div>
+        <div class="proj-desc">طراحی و راه‌اندازی سایت فروشگاهی برای محصول پلنر دیجیتال فلو با پیکربندی کامل فروش.</div>
         <div class="proj-tags">
           <span class="proj-tag">WordPress</span>
           <span class="proj-tag">WooCommerce</span>
@@ -952,7 +974,7 @@
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
         </div>
         <div class="proj-name">Pezhvakehonar.ir</div>
-        <div class="proj-desc">Website for an arts academy — full deployment with initial On-Page SEO setup for improved search visibility.</div>
+        <div class="proj-desc">راه‌اندازی وب‌سایت آموزشگاه پژواک هنر به همراه پیاده‌سازی سئوی اولیه برای دیده‌شدن در جستجوها.</div>
         <div class="proj-tags">
           <span class="proj-tag">WordPress</span>
           <span class="proj-tag">On-Page SEO</span>
@@ -965,7 +987,7 @@
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
         </div>
         <div class="proj-name">Babalbahr.com</div>
-        <div class="proj-desc">Corporate website for a shipping company, delivered with initial SEO to establish organic search presence.</div>
+        <div class="proj-desc">طراحی سایت شرکتی برای شرکت کشتیرانی باب‌البحر به همراه بهینه‌سازی ساختار برای موتورهای جستجو.</div>
         <div class="proj-tags">
           <span class="proj-tag">WordPress</span>
           <span class="proj-tag">SEO</span>
@@ -978,7 +1000,7 @@
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
         </div>
         <div class="proj-name">MapcoLogistics.com</div>
-        <div class="proj-desc">Corporate web presence for Mapco Logistics — built and maintained in parallel with an active IT support role inside the company.</div>
+        <div class="proj-desc">راه‌اندازی سایت شرکتی میکو لجستیک همزمان با حضور در نقش پشتیبانی زیرساخت IT مجموعه.</div>
         <div class="proj-tags">
           <span class="proj-tag">WordPress</span>
           <span class="proj-tag">Corporate</span>
@@ -991,7 +1013,7 @@
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
         </div>
         <div class="proj-name">EchoTeb.ir</div>
-        <div class="proj-desc">Health &amp; wellness corporate website — design and deployment for a medical services company, EchoTeb.</div>
+        <div class="proj-desc">طراحی و راه‌اندازی سایت شرکتی برای مجموعه درمانی و سلامت اکوطب.</div>
         <div class="proj-tags">
           <span class="proj-tag">WordPress</span>
           <span class="proj-tag">Healthcare</span>
@@ -1007,8 +1029,8 @@
 <section id="education">
   <div class="container">
     <div class="section-head reveal">
-      <p class="section-label">05 — education &amp; certifications</p>
-      <h2>Learning path</h2>
+      <p class="section-label">۰۵ — تحصیلات و گواهینامه‌ها</p>
+      <h2>مسیر یادگیری</h2>
       <div class="section-rule"></div>
     </div>
     <div class="edu-grid">
@@ -1016,36 +1038,36 @@
       <div class="edu-card featured reveal">
         <div class="edu-icon">🎓</div>
         <div>
-          <div class="edu-title">BSc Computer Engineering</div>
-          <div class="edu-org">Abrar University · Non-profit</div>
-          <div class="edu-meta">2019 – 2023</div>
+          <div class="edu-title">کارشناسی مهندسی کامپیوتر</div>
+          <div class="edu-org">دانشگاه غیرانتفاعی ابرار</div>
+          <div class="edu-meta">۱۳۹۹ – ۱۴۰۲</div>
         </div>
       </div>
 
       <div class="edu-card reveal">
         <div class="edu-icon">🌐</div>
         <div>
-          <div class="edu-title">CS50's Web Programming with Python &amp; JavaScript</div>
+          <div class="edu-title">CS50's Web Programming with Python</div>
           <div class="edu-org">Harvard University · edX</div>
-          <div class="edu-meta">2025</div>
+          <div class="edu-meta">۱۴۰۵</div>
         </div>
       </div>
 
       <div class="edu-card reveal reveal-delay-1">
         <div class="edu-icon">⚙️</div>
         <div>
-          <div class="edu-title">Django Backend Development</div>
-          <div class="edu-org">Daneshkar</div>
-          <div class="edu-meta">2025</div>
+          <div class="edu-title">توسعه بک‌اند جنگو (Django)</div>
+          <div class="edu-org">آکادمی دانشکار</div>
+          <div class="edu-meta">۱۴۰۵</div>
         </div>
       </div>
 
       <div class="edu-card reveal reveal-delay-2">
         <div class="edu-icon">🐍</div>
         <div>
-          <div class="edu-title">Advanced Python Programming</div>
-          <div class="edu-org">Maktabkhooneh · Instructor: Jadi Mirmirani</div>
-          <div class="edu-meta">57 hrs · 2023</div>
+          <div class="edu-title">برنامه‌نویسی با پایتون (پیشرفته)</div>
+          <div class="edu-org">مکتب‌خونه · مدرس: جادی میرمیرانی</div>
+          <div class="edu-meta">۵۷ ساعت · ۱۴۰۲</div>
         </div>
       </div>
 
@@ -1054,8 +1076,8 @@
     <div class="volunteer-strip reveal">
       <div class="volunteer-icon">🤝</div>
       <div class="volunteer-text">
-        <strong>Volunteer Python Instructor</strong>
-        <span>Taught Python from introductory to mid-advanced level — translating backend concepts for beginner audiences.</span>
+        <strong>مدرس داوطلبانه پایتون</strong>
+        <span>تدریس زبان برنامه‌نویسی پایتون از سطح مقدماتی تا نیمه‌پیشرفته و انتقال مفاهیم پایه‌ای بک‌اند به کارآموزان.</span>
       </div>
     </div>
 
@@ -1066,7 +1088,7 @@
 <footer>
   <div class="container footer-inner">
     <span class="footer-name"><span>fazele</span>.ardestani — Python Developer</span>
-    <span class="footer-copy">Tehran, Iran · 2025</span>
+    <span class="footer-copy">Tehran, Iran · 2026</span>
   </div>
 </footer>
 
@@ -1088,7 +1110,6 @@
     }, { threshold: 0.12 });
     els.forEach(el => io.observe(el));
 
-    // hero items fire immediately
     document.querySelectorAll('#hero .reveal').forEach(el => {
       setTimeout(() => el.classList.add('visible'), 80);
     });
